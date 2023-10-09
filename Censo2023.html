@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css" />
+    <title>Censo 2023</title>
+</head>
+
+<body>
+    
+    <div id="contenedor">
+        
+        <div id="cabezal">
+            <img id="logo" src="img/logo_censo.png" alt="logo">
+            <H1>Censo 2023</H1>
+        </div>
+        
+        <div id ="divMenuInicial">    <!--menu para incio de la aplicación -->
+            <article>
+                <input id="btnIngresoInvitado" type="button" value ="Ingresar Censo como persona"> 
+                <input id="btnEstadisticasInvitado" type="button" value ="Información estadísitica Censo">
+            </article>
+            <article>
+                <input id="btnLogCensista" type="button" value="Iniciar sesión como Censista">
+                <input id="btnRegistroCensista" type="button" value="Registrarse como Censista">
+            </article>
+        </div>
+
+        
+        
+        <div id="divContenedor"> 
+            
+            
+            <!-- -------------------------CLASE CENSISTA---------------------------------------- -->
+            <div id ="divRegistroCensista" class="claseCensista">
+                
+                <H3>Registro de usuario Censista</H3>
+                <label>Ingrese su nombre completo</label> <br>
+                <input id="txtNombreCensista" type="text" placeholder="Ej. Martinez, Ana"> <br> <br>  
+                <label>Ingrese nombre de usuario (Primer letra de nombre y apellido) </label> <br>
+                <input id="txtUsuarioCensista" type="text" placeholder="Ej. AMartinez"> <br> <br> 
+                <label>Ingrese contraseña (min. 5 caracteres, incluyendo una Mayúscula, una minúscula y un número) </label> <br> 
+                <input id="txtPasswordCencista" type="password" placeholder="Ej. Az4rt"> <br> <br>  
+                <input id="btnGeneraCensista" type="button" value ="Confirmar Perfil">
+                <p id="pRegistroCensista"></p>
+            </div>
+            
+            <div id="divLogCensista" class="claseCensista">
+                <H3>Ingreso de Censista</H3>
+                <label>Ingrese nombre de usuario </label> <br>
+                <input id="txtIngresoUsuarioCensista" type="text" placeholder="Ej. AMartinez"> <br> <br> 
+                <label>Ingrese contraseña </label><br> 
+                <input id="txtIngresoPasswordCencista" type="password" placeholder="Ej. Az4rt"> <br> <br>  
+                <input id="btnIngresaCensista" type="button" value ="Iniciar sesión"><br>
+                <p id="pMensajeIngresoCensista"></p> <br>
+            </div>
+            
+            <!-- Menu Censista -->
+            <div id="divMenuCensista" class="claseCensista">
+                <H3 id="headerMenuCensista"></H3>
+                <input id="btnIngresarNuevoCenso" type="button" value="Ingresar nuevo censo"> <br><br>
+                <input id="btnMostrarCensosPrecargados" type="button" value="Validar censos pre cargados"><br> <br>
+                <input id="btnReasignarPersona" type="button" value="Reasignar Persona a otro censista"><br> <br>
+                <input id="btnInfoEstadistica" type="button" value="Infromación estadística Censo"><br><br>
+            </div>
+            
+            
+            <div id ="divCensosPreCompletados" class="claseCensista">
+                
+                <div id="divCensosPreCompletadosConsulta" class="claseCensista">
+                    <H3 id="divCensosPreCompletadosConsultaTitulo">Consulta de censos precompleados </H3>
+                    <p id="pMostrarDatosCensosPrecargado"> </p> <br> 
+                </div>
+                
+                <div id="divMostrarPersonaPrecargada" class="claseCensista">
+                    <label> Ingrese Cédula del censo precargado</label> <select id="selCensosPrecagados"></select><br>
+                    <input id="btnIngresaCIPrecargado" type="button" value ="Ver datos"> <br>
+                    <p id="pMostrarPersonaPrecargada"></p>
+                </div>
+                
+                <div id="divBotonesModificaOValidaCensoPrecargado" class="claseCensista">
+                    <input id="btnValidaPrecargado1" type="button" value ="Validar Censo"> <br><br>
+                    <input id="btnModificaPrecargado" type="button" value ="Modificar datos precargados"><br><br>
+                    
+                </div>
+                
+                <p id="pMostrarResultadoConfirmarCenso" class="claseCensista"></p>
+                
+                <div id="divModificaCensoPrecargado" class="claseCensista">
+                    <p id="pModificaCensoPrecargado"></p>
+                    <label> Modificar Nombre </label> <input id="txtModificaNombrePrecargado" type="text" placeholder="Ej. Ana"> <br>
+                    <label> Modificar Apellido </label> <input id="txtModificaApellidoPrecargado" type="text" placeholder="Ej. Martinez"> <br>
+                    <label> Modificar Edad </label> <input id="txtModificaEdadPrecargado" type="text" placeholder="Ej. 40"> <br>
+                    <label> Modificar departamento de residencia </label>
+                    <select id="selectModificaDpto"> </select> <br> <br> <!-- lo trae del html-->
+                    
+                    <label>Seleccione una ocupación </label>
+                    <select id="selectModificaOcupacion">
+                        <option value = "error">Seleccione...</option>
+                        <option value = "dependiente">Dependiente</option>
+                        <option value = "independiente">Independiente</option> 
+                        <option value = "estudiante">Estudiante</option> 
+                        <option value = "no trabaja">No trabaja</option> 
+                    </select> <br> <br>
+                    
+                    <input id="btnValidaPrecargado2" type="button" value ="Validar datos del censo"> <br>
+                    
+                </div id="divModificaCensoPrecargado">
+                
+                <div id="divValidaCensoPrecargado" class="claseCensista"></div>
+                
+            </div id="divCensosPreCompletados">
+            
+            <div id ="divReasignaCensosPreCompletados" class="claseCensista">
+                
+                <H3>Reasignar censos </H3>
+                
+                <p id="pReasignaCensista"></p>
+                
+                
+                <label> Censos pendientes de aprobar por el usuario</label>
+                <select id="selectCensosPendientesUsuario">    </select> <br> <br>
+                
+                <label> Censista a asignar </label>
+                <select id="selectCensistasAasignar"> </select> <br> <br>
+                
+                <input id="btnReasignaPrecargado" type="button" value ="Reasigna censo"> <br>
+                
+                
+                
+                
+            </div>
+            
+            <div id="divReasignaCensista2" class="claseCensista"></div>
+            
+            <div id ="divEstadisticasCensista" class="claseCensista">
+                
+                <H3>Estadísticas Censo 2023 </H3>
+                <label> Total de personas censadas y validadas hasta el momento:  </label> 
+                <b><output id="txtMostrarCantidadPersonasCensadasValidasCensista"></output></b> <br> 
+                <br>
+                <label>Porcentaje de personas pendientes de validar sobre total censadas: </label> 
+                <b><output id="txtPendientesValidacionSobreTotalCensista"></output> </b><br><br>
+                <label>Cantidad de personas censadas por departamento:</label><br>
+                <p id="pMostrarPersonasPorDeptoCensista"></p><br>
+                
+                
+                
+                <label>% personas censadas (menores y mayores de edad) por Departamento </label> <br><br>
+                
+                <label> Seleccione un departamento</label>
+                <select id="selectDeptoEstadisticaCensista">    <!-- lo trae del html-->
+                    
+                </select> 
+                
+                <br>
+                <p id="pMostrarCensadosMenoresYMayoresPorDepto"></p>
+                
+            </div>
+            
+            
+            <!-- -------------------------CLASE PERSONA---------------------------------------- -->
+            <div id="divMostrarTablaInvitado" class="clasePersona"></div>
+            
+            <div id="divValidaCedulaInvitado" class="clasePersona">
+                
+                <div id="divInicioCensoPersona" class="clasePersona">
+                    <H3><u>Bienvenido al Censo</u></H3>
+                    <label>Ingrese número de CI</label> <br>
+                    <input id="txtCIPersona" type="text" placeholder="Ej. 1.111.111-1">     
+                    <input id="btnValidaCINuevoIngresoPersona" type="button" value ="Ingreso nuevo censo"> 
+                    <p id="pMensajeValidacionIngreso"> </p>
+                </div>
+                
+                <div id="divModificaOEliminaPersona" class="clasePersona">
+                    <input id="btnEditarCargaPersona" type="button" value ="Editar censo">
+                    <input id="btnEliminarCargaPersona" type="button" value ="Eliminar censo">
+                </div>
+                
+                <p id="pMensajeEliminaCargaPersona"></p>
+                
+            </div>
+            
+            
+            <div id ="divIngresoNuevoCenso" class="clasePersona">
+                
+                <H3 id="divIngresoNuevoCensoTitulo">Ingreso de censo</H3>
+                <label>Nro. de Cédula </label> <br>
+                <p id="pNroCedulaIngresado"></p>  
+                <br><br><br>
+                <label>Nombre </label> <br>
+                <input id="txtNombreNuevoCenso" type="text" placeholder="Nombre del censado"> <br> <br> 
+                <label>Apellido </label> <br>
+                <input id="txtApellidoNuevoCenso" type="text" placeholder="Apellido del censado"> <br> <br> 
+                <label>Edad </label> <br>
+                <input id="txtEdadNuevoCenso" type="text" placeholder="Edad (entre 0 y 130)"> <br> <br> 
+                
+                <label>Seleccione departamento de residencia </label>
+                <select id="selectDptoNuevoIngreso"> </select> <br> <br> <!-- lo trae del html-->
+                
+                <label>Seleccione una ocupación </label>
+                <select id="selectOcupacionNuevoIngreso">
+                    <option value = "error">Seleccione...</option>
+                    <option value = "dependiente">Dependiente</option>
+                    <option value = "independiente">Independiente</option>
+                    <option value = "estudiante">Estudiante</option> 
+                    <option value = "no trabaja">No trabaja</option> 
+                    
+                    
+                </select> <br> <br>
+                
+                <input id="btnValidaNuevoIngreso" type="button" value ="Ingreso Censo"> <br>
+                <input id="btnConfirmarDatosModificaCensoPersona" type="button" value ="Confirmar datos censo"> <br>
+            </div>
+            
+            <div id="divMensajeIngresoCenso"></div>
+            
+            
+            <div id="divModificaCensoPrecargadoPersona" class="clasePersona">
+                <H3 id="divModificaCensoTitulo"></H3>
+                <p id="pModificaCensoPrecargadoPersona"></p>
+                <label> Modificar Nombre </label> <input id="txtModificaNombrePrecargadoPersona" type="text" placeholder="Ej. Ana"> <br>
+                <label> Modificar Apellido </label> <input id="txtModificaApellidoPrecargadoPersona" type="text" placeholder="Ej. Martinez"> <br>
+                <label> Modificar Edad </label> <input id="txtModificaEdadPrecargadoPersona" type="text" placeholder="Ej. 40"> <br>
+                <label> Modificar departamento de residencia </label>
+                <select id="selectModificaDptoPersona"> <!-- lo trae del html-->
+                </select> <br> <br>
+                
+                <label>Seleccione una ocupación </label>
+                <select id="selectModificaOcupacionPersona">
+                    <option value = "error">Seleccione...</option>
+                    <option value = "dependiente">Dependiente</option>
+                    <option value = "independiente">Independiente</option> 
+                    <option value = "estudiante">Estudiante</option> 
+                    <option value = "no trabaja">No trabaja</option> 
+                    
+                </select> <br> <br>
+                
+                <input id="btnModificaPrecargadoPersona" type="button" value ="Confirmar datos"> <br>
+                
+                <p id="pModificaPersonaError"></p>
+                
+            </div id="divModificaCensoPrecargadoPersona">
+            
+            <div><p id="pMensajeModificaPersona" class="clasePersona"></p> </div>
+            
+            
+            <div id="divVolverAMenuInicial">
+                <br> <input id="btnVolverMenuInicial" type="button" value ="Volver a menú inicial">
+            </div>
+            
+            <div id="divMostrarMenuCensista" class="claseCensista"><!-- QUEDA ABAJO DEL TODO AUNQUE SEA DE CENSISTA POR LA UBICACION EN LA PÁGINA-->
+                <input id="btnMenuCensista" type="button" value ="Volver a menú censista">
+                
+            </div>       
+            
+            <div id="divLogCensistaCerrarSesion" class="claseCensista"><!-- QUEDA ABAJO DEL TODO AUNQUE SEA DE CENSISTA POR LA UBICACION EN LA PÁGINA-->
+                <input id="btnCerrarSesionCensista" type="button" value ="Cerrar sesión">
+                <p id="pMensajeCerrarSesionCensista"></p>  
+            </div>       
+            
+            
+            
+            
+            
+        </div id="divContenedor"> 
+        
+        
+        <footer id="pie">
+            <p> <b>Obligatorio Programación 1 </b> <br> Carolina Vázquez 175216 <br> Nicolás Kaufmann 171139 <br> Junio 2023 </p>
+        </footer>
+        
+    </div id="contenedor">
+    
+</body>
+
+<script src="js/clases.js"></script>
+<script src="js/sistema.js"></script>
+<script src="js/UI.js"></script>
+
+</html>
